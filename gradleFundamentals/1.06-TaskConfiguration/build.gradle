@@ -1,0 +1,30 @@
+// task declarations
+project.task("myTask")
+task("myTask2")
+task "myTask3"
+task myTask4
+
+myTask4.description = "This is myTask4 description"
+myTask4.group = "This task belongs to this group"
+myTask4 << {println "Print this last3"}
+myTask4.leftShift {println "Print this last2"} // this was deprecated in gradle version 5
+myTask4.doLast {println "Print this last1"}
+myTask4.doFirst{println "Print this first"}
+
+// print after task declarations using closure. DOn't do like this! instead use 'doLast' as in task6
+task myTask5 << {println "Print this immediately after task declaration"}
+
+// declare task and pass required configurations inside closure
+task myTask6 {
+	description "This is task description"
+	group "This is task's group"
+	doLast {
+		println "Print this line last"
+	}
+}
+
+task myTask7(description:"another way of configuring description") {
+	doLast {
+		println "This is print command"
+	}
+}

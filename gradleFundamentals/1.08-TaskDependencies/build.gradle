@@ -1,0 +1,40 @@
+task task1 {
+	doLast {
+		println "print statement of task1"
+	}
+}
+
+task Task2 {
+	// when we run task2, first task1 runs then task2. Because task2 depends on task1.
+	//dependsOn "task1"
+
+	// task2 will run after tasks which name starts with 'task'
+	dependsOn tasks.matching {task -> task.name.startsWith('task')}
+
+	// everytime task2 runs  - task3 runs after it, because of 'finalizedBy' usage.
+	//finalizedBy "task3"
+	doLast {
+		println "print statement of task2"
+	}
+}
+
+task task3 {
+	doLast {
+		println "print statement of task3"
+	}
+}
+// setting enabled to false prevents execution of any actions of this task
+task3.enabled = false
+
+// taskY runs after taskX
+task taskX {
+    doLast {
+        println 'taskX'
+    }
+}
+task taskY {
+    doLast {
+        println 'taskY'
+    }
+}
+taskY.mustRunAfter taskX

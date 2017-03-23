@@ -16,7 +16,9 @@ task myTask5 << {println "Print this immediately after task declaration"}
 
 // declare task and pass required configurations inside closure
 task myTask6 {
+	// set task description
 	description "This is task description"
+	//set task group
 	group "This is task's group"
 	doLast {
 		println "Print this line last"

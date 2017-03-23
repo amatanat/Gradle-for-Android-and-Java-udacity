@@ -1,0 +1,32 @@
+// this task copies from images folder into build folder where image extension is jpeg
+task task1 (type: Copy){
+	from 'images'
+	into 'build'
+	include '*.jpeg'
+}
+
+// this task copies inside zip folder
+task zipImageFile(type: Zip){
+	// name of a zip file
+	baseName = 'photo'
+	destinationDir = file('build')
+
+//copy from images folder into jpeg subfolder of photo folder
+	from ('images'){
+		include '*.jpeg'
+		into 'jpeg'
+	}
+//copy from images folder into gif subfolder of photo folder
+	from ('images'){
+		include '*.gif'
+		into 'gif'
+	}
+
+}
+
+// delete build folder
+task deleteTask(type: Delete){
+	delete 'build'
+
+	//delete task1
+}

@@ -1,0 +1,14 @@
+/*
+	There are three ways to pass parameters.
+		1. using gradle.properties file
+		2. from console 'gradle -Pgreeting="Hello from console" printGreeting'
+		3. via 'ext', it shadows gradle.properties definition.
+*/
+
+task printGreeting << {
+	println greeting
+}
+
+ext {
+	greeting = "Hello from ext"
+}

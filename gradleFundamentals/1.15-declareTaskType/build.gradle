@@ -1,0 +1,14 @@
+// create custom task type 
+class PrintString extends DefaultTask{
+	String value
+
+	@TaskAction
+	void doAction() {
+		print "Value is $value"
+	}
+}
+
+// use custom task class for printing value
+task testTask(type: PrintString){
+	value = "Test"
+}

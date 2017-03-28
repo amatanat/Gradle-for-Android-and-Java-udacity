@@ -1,0 +1,18 @@
+// apply java plugin
+apply plugin: 'java'
+
+// add additional source directory ('src' automatically included)
+sourceSets {
+  main {
+    java {
+      srcDirs 'java'
+    }
+  }
+}
+
+// add manifest attribute
+jar {
+    manifest {
+        attributes("Implementation-Version": 1.0)
+    }
+}

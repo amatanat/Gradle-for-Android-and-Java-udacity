@@ -1,1 +1,4 @@
-# Gradle-for-Android-and-Java (udacity online course)
+# Gradle for Android and Java 
+=========================================================
+* Gradle fundamentals - online course by udacity
+

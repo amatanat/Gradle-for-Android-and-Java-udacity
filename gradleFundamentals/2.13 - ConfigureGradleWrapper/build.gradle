@@ -1,0 +1,26 @@
+/*
+1. Run the 'wrapper' task to create the Gradle wrapper files. 
+
+ gradle wrapper
+
+
+2. Use the wrapper to run the 'tasks' task.
+
+./gradlew tasks
+
+3. Configure the 'wrapper' task to use Gradle version 2.14.1.
+
+wrapper {
+    gradleVersion = '2.14.1'
+}
+
+4. Use the wrapper with the '--version' option to confirm it is using
+   Gradle version 2.14.1.
+
+./gradlew -v
+
+5. Modify the gradle-wrapper.properties file to use the latest Gradle
+   nightly build.
+
+*/
+

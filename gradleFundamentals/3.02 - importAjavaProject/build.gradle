@@ -1,0 +1,18 @@
+/* 
+
+move joke telling code from our build script to a Java project, and
+build it from Android Studio. We've already written the joke, so all you need
+to do is:
+
+1. Apply the Java plugin to your project.
+2. Sync the Gradle project model with the Android Studio project model using
+   the tool bar icon.
+3. Browse through the tasks in the Gradle pane of Android Studio.
+4. Use the Gradle "Application" plugin to build and run JokeTeller.
+
+*/
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.udacity.gradle.JokeTeller"

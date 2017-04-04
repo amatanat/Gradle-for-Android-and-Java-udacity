@@ -1,9 +1,7 @@
 package com.gradle.amatanat.androidlib;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.util.Pair;
 import android.widget.TextView;
 
 
